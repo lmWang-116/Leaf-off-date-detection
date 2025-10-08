@@ -437,7 +437,7 @@ if(is.na(EOF[i,]) & is.na(MOF[i,])){
 }else if(is.na(MOF[i,]) & !is.na(EOF[i,])){
   season_mask <- c((round(mean(MOF, na.rm = TRUE))-10):min(EOF[i,] + 30, 366))
 }else if(!is.na(MOF[i,]) & is.na(EOF[i,])){
-  season_mask <- c((MOF[i,])-10:min(round(mean(EOF, na.rm = TRUE)) + 30, 366))
+  season_mask <- c((MOF[i,]-10):min(round(mean(EOF, na.rm = TRUE)) + 30, 366))
 }
 
 # remove outlier value
